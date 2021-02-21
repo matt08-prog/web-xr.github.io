@@ -5,12 +5,13 @@ class App{
 	constructor(){
 		const container = document.createElement( 'div' );
 		document.body.appendChild( container );
-    
-        window.addEventListener('resize', this.resize.bind(this) );
+		
+		window.addEventListener('resize', this.resize);
+        //window.addEventListener('resize', this.resize.bind(this) );
 	}	
     
     resize(){
-        
+        console.log(this);
     }
     
 	render( ) {   
