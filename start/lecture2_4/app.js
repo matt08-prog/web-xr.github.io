@@ -25,7 +25,7 @@ class App{
 		container.appendChild( this.renderer.domElement );
 		
         //Replace Box with Circle, Cone, Cylinder, Dodecahedron, Icosahedron, Octahedron, Plane, Sphere, Tetrahedron, Torus or TorusKnot
-        const geometry = new THREE.BoxBufferGeometry(); 
+        const geometry = new THREE.CircleBufferGeometry(1, 40, 0, Math.PI / 2); 
         
         const material = new THREE.MeshStandardMaterial( { color: 0xFF0000 });
 
