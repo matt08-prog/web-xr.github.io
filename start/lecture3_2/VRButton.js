@@ -15,10 +15,11 @@ class VRButton{
             button.style.height = '40px'
             document.body.appendChild( button )
 
-            navigator.xr.isSessionSupported('immersive-vrx').then ((suported) => {
-                supported ? this.showEnterVR( button ) : this.showWebXRNotFound(
-                button )
-            })
+            navigator.xr.isSessionSupported( 'immersive-vrx' ).then ((supported) => {
+                
+                supported ? this.showEnterVR( button ) : this.showWebXRNotFound( button );
+
+            });
 		} else {
             
 		}
