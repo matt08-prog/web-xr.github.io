@@ -34,7 +34,7 @@ class App{
 		
         //Add code here
         this.LoadingBar = new LoadingBar()
-        this.loadGLTF()
+        this.loadFBX()
         
         this.controls = new OrbitControls( this.camera, this.renderer.domElement );
         this.controls.target.set(0, 3.5, 0);
@@ -70,7 +70,7 @@ class App{
             function(gltf){
                 self.chair = gltf.scene
                 const bbox = new THREE.Box3().setFromObject( gltf.scene )
-                console.log("min:${vector3.ToString(bbox.min, 2)} - max:${vector3ToString(bbox.max, 2)}") 
+                console.log('min:${vector3ToString(bbox.min, 2)} - max:${vector3ToString(bbox.max, 2)}') 
                 self.scene.add( gltf.scene )
                 self.LoadingBar.visible = false
                 self.renderer.setAnimationLoop( self.render.bind(self) )
@@ -85,6 +85,26 @@ class App{
     }
     
     loadFBX(){
+        const self = this;
+        const loader = new FBXLoader().setPath('../../assets/')
+
+        loader.load(
+            'office-chair.fbx',
+            function(object){
+                self.chair = object
+                const bbox = new THREE.Box3().setFromObject( object )
+                console.log('min: ${vector3ToString(bbox.min, 2)} - max: ${vector3ToString(bbox.max, 2)}') 
+                self.scene.add( object )
+                self.LoadingBar.visible = false
+                self.renderer.setAnimationLoop( self.render.bind(self) )
+            },
+            function(xhr) {
+                self.LoadingBar.progress = xhr.loaded/xhr.total
+            },
+            function(err){
+                console.error( 'error while loading gltf file')
+            }
+        )
     }
     
     resize(){
