@@ -77,7 +77,7 @@ class App{
                 self.LoadingBar.progress = xhr.loaded/xhr.total
             },
             function(err){
-                console.log( 'error while loading gltf file')
+                console.error( 'error while loading gltf file')
             }
         )
     }
