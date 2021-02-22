@@ -26,7 +26,7 @@ class App{
 		
         //Replace Box with Circle, Cone, Cylinder, Dodecahedron, Icosahedron, Octahedron, Plane, Sphere, Tetrahedron, Torus or TorusKnot
         // const geometry = new THREE.CircleBufferGeometry(1, 40, 0, Math.PI / 2); 
-        const shape = new THREE.shape()
+        const shape = new THREE.Shape()
         const outerRadius = 0.8
         const innerRadius = 0.4
         const PI2 =PI2
@@ -44,7 +44,7 @@ class App{
         const extrudeSettings = {
             steps: 1,
             depth: 1,
-            bevelEnabled: false
+            bevelEnabled: true
         }
 
         const geometry = new THREE.ExtrudeGeometry( shape, extrudeSettings )
