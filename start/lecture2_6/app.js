@@ -34,6 +34,7 @@ class App{
 		
         //Add code here
         this.LoadingBar = new LoadingBar()
+        this.loadGLTF()
         
         this.controls = new OrbitControls( this.camera, this.renderer.domElement );
         this.controls.target.set(0, 3.5, 0);
@@ -62,6 +63,7 @@ class App{
     
     loadGLTF(){
         const self = this;
+        const loader = new GLTFLoader().setPath('../../assets/')
     }
     
     loadFBX(){
