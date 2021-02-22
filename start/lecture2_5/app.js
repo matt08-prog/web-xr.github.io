@@ -26,7 +26,7 @@ class App{
 		
         const geometry = new THREE.TorusKnotBufferGeometry( 0.8, 0.3, 120, 16 ); 
         
-        const material = new THREE.MeshLambertMaterial( { color: 0xFF00FF });
+        const material = new THREE.MeshPhongMaterial( { color: 0xFF00FF, specular: 0x444444, shininess: 60 });
 
         this.mesh = new THREE.Mesh( geometry, material );
         
