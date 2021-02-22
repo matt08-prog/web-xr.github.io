@@ -33,7 +33,7 @@ class App{
 		container.appendChild( this.renderer.domElement );
 		
         //Add code here
-        
+        this.LoadingBar = new LoadingBar()
         
         this.controls = new OrbitControls( this.camera, this.renderer.domElement );
         this.controls.target.set(0, 3.5, 0);
