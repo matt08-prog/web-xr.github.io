@@ -37,7 +37,7 @@ class App{
 
         for (let theta = inc; theta < PI2; theta+= inc){
             const radius = (inner) ? innerRadius : outerRadius
-            shape.lineTo( Math.sin(theta)*radius, Math.cos(theta)* radius)
+            shape.lineTo( Math.cos(theta)*radius, Math.sin(theta)* radius)
             inner = !inner
         }
 
