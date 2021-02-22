@@ -15,7 +15,7 @@ class VRButton{
             button.style.height = '40px'
             document.body.appendChild( button )
 
-            navigator.xr.isSessionSupported( 'immersive-vrx' ).then ((supported) => {
+            navigator.xr.isSessionSupported( 'immersive-vr' ).then ((supported) => {
                 
                 supported ? this.showEnterVR( button ) : this.showWebXRNotFound( button );
 
@@ -27,7 +27,13 @@ class VRButton{
     }
 
 	showEnterVR( button ) {
-    
+        this.stylizeElement( button, true, 30, true)
+
+        button.style.display = ''
+        button.style.right = '20px'
+        button.style.width = '80px'
+        button.style.cursor = 'pointer'
+        button.innerHTML = '<i class="fas fa-vr-cardboard></i>'
     }
 
     disableButton( button ) {
