@@ -89,7 +89,9 @@ class App{
     }
     
     buildControllers(){
-        const controllerModelFactory = new XRControllerModelFactory( [
+        const controllerModelFactory = new XRControllerModelFactory()
+
+        const geometry = new THREE.BufferGeometry().setFromPoints( [
             new THREE.Vector3(0,0,0),
             new THREE.Vector3(0,0,-1)
         ])
