@@ -103,7 +103,7 @@ class App{
 
         for(let i=0; i<=1; i++){
             const controller = this.renderer.xr.getController( i )
-            controller.add( line.close() )
+            controller.add( line.clone() )
             controller.userData.selectPressed = false
             this.scene.add(controller)
 
