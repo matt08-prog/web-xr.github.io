@@ -90,7 +90,7 @@ class App{
     
     buildControllers(){
         const controllerModelFactory = new XRControllerModelFactory()
-//testing again for the eight time
+//testing again for the final time
         const geometry = new THREE.BufferGeometry().setFromPoints( [
             new THREE.Vector3(0,0,0),
             new THREE.Vector3(0,0,-1)
