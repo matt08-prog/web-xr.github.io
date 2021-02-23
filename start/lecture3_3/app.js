@@ -89,7 +89,7 @@ class App{
     }
     
     buildControllers(){
-        const controllerModelFactory = new XRcontrollerModelFactory( [
+        const controllerModelFactory = new XRControllerModelFactory( [
             new THREE.Vector3(0,0,0),
             new THREE.Vector3(0,0,-1)
         ])
