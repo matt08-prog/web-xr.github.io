@@ -167,6 +167,9 @@ class App{
                     this.rad += 0.01
                     intersects[i].object.add( this.highlights[i] )
                     this.highlights[i].scale.x = this.rad
+                    this.highlights[i].scale.y = this.rad
+                    this.highlights[i].scale.z = this.rad
+
                     this.highlights[i].visible = true
                     //controller.children[0].scale.z = intersects[0].distance  
                 }
@@ -175,7 +178,8 @@ class App{
                 for(let i=0; i < this.highlights.length; i++)
                 {
                     this.highlights[i].scale.x = this.rad
-                    this.highlights[i].visible = false
+                    this.highlights[i].scale.y = this.rad
+                    this.highlights[i].scale.z = this.rad                    this.highlights[i].visible = false
                 }
             }
         }
