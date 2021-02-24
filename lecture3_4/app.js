@@ -168,7 +168,7 @@ class App{
             } else{
                 for(let i=0; i < highlights.length; i++)
                 {
-                    this.highlight.visible = false
+                    highlights[i].visible = false
                 }
             }
         }
