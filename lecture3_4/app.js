@@ -153,7 +153,7 @@ class App{
 
             if (intersects.length > 0)
             {
-                for(leti=0; i < intersects.length; i++)
+                for(let i=0; i < intersects.length; i++)
                 {
                     intersects[i].object.add( this.highlight )
                     this.highlight.visible = true
