@@ -86,7 +86,7 @@ class App{
             this.scene.add( this.highlights[i] )
         }
 
-        this.rad = 0.0
+        this.rad = 1.2
     }
     
     setupXR(){
@@ -174,7 +174,7 @@ class App{
                     //controller.children[0].scale.z = intersects[0].distance  
                 }
             } else{
-                this.rad = 0.0
+                this.rad = 1.2
                 for(let i=0; i < this.highlights.length; i++)
                 {
                     this.highlights[i].scale.x = this.rad
