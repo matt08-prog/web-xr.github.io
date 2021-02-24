@@ -77,10 +77,16 @@ class App{
             this.room.add( object );
         }
         
-        this.highlight = new THREE.Mesh( geometry, new THREE.MeshBasicMaterial({
-        color: 0xFFFFFF, side: THREE.BackSide }))
-        this.highlight.scale.set( 1.2, 1.2, 1.2 )
-        this.scene.add( this.highlight )
+        var highlights = []
+        for ( let i = 0; i < 100; i++)
+        {
+            highlights.push(new THREE.Mesh( geometry, new THREE.MeshBasicMaterial({
+            color: 0xFFFFFF, side: THREE.BackSide })))
+            highlights[i].scale.set( 1.2, 1.2, 1.2 )
+            this.scene.add( highlights[i] )
+        }
+
+
     }
     
     setupXR(){
@@ -155,11 +161,8 @@ class App{
             {
                 for(let i=0; i < intersects.length; i++)
                 {
-                    var hLight = new THREE.Mesh( geometry, new THREE.MeshBasicMaterial({
-                    color: 0xFFFFFF, side: THREE.BackSide }))
-                    this.highlight.scale.set( 1.2, 1.2, 1.2 )
-                    this.scene.add( this.highlight )
-                    intersects[i].object.add( hLight )
+                    var hLight = this.highlight
+                    intersects[i].object.add( this.highlight )
                     this.highlight.visible = true
                     //controller.children[0].scale.z = intersects[0].distance  
                 }
