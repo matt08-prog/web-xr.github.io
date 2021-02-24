@@ -160,17 +160,23 @@ class App{
 
             const intersects = this.raycaster.intersectObjects( this.room.children)
 
+            var rad = 0.0
+
             if (intersects.length > 0)
             {
                 for(let i=0; i < intersects.length; i++)
                 {
+                    rad += 0.01
                     intersects[i].object.add( this.highlights[i] )
+                    this.highlights[i].scale.x = rad
                     this.highlights[i].visible = true
                     //controller.children[0].scale.z = intersects[0].distance  
                 }
             } else{
+                rad = 0.0
                 for(let i=0; i < this.highlights.length; i++)
                 {
+                    this.highlights[i].scale.x = rad
                     this.highlights[i].visible = false
                 }
             }
