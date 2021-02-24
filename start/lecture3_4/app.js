@@ -179,7 +179,8 @@ class App{
                 {
                     this.highlights[i].scale.x = this.rad
                     this.highlights[i].scale.y = this.rad
-                    this.highlights[i].scale.z = this.rad                    this.highlights[i].visible = false
+                    this.highlights[i].scale.z = this.rad                    
+                    this.highlights[i].visible = false
                 }
             }
         }
