@@ -77,13 +77,13 @@ class App{
             this.room.add( object );
         }
         
-        var highlights = []
-        for ( let i = 0; i < 100; i++)
+        this.highlights = []
+        for ( let i = 0; i < 20; i++)
         {
-            highlights.push(new THREE.Mesh( geometry, new THREE.MeshBasicMaterial({
+            this.highlights.push(new THREE.Mesh( geometry, new THREE.MeshBasicMaterial({
             color: 0xFFFFFF, side: THREE.BackSide })))
-            highlights[i].scale.set( 1.2, 1.2, 1.2 )
-            this.scene.add( highlights[i] )
+            this.highlights[i].scale.set( 1.2, 1.2, 1.2 )
+            this.scene.add( this.highlights[i] )
         }
 
 
@@ -105,7 +105,10 @@ class App{
 
         function onSelectEnd() {
             this.children[0].scale.z = 0
-            self.highligh.visible = false
+            for(let i=0; i < this.highlights.length; i++)
+            {
+                self.highlights[i].visible = false
+            }
             this.userData.selectPressed = false
         }
 
@@ -161,14 +164,14 @@ class App{
             {
                 for(let i=0; i < intersects.length; i++)
                 {
-                    intersects[i].object.add( highlights[i] )
-                    highlights[i].visible = true
+                    intersects[i].object.add( this.highlights[i] )
+                    this.highlights[i].visible = true
                     //controller.children[0].scale.z = intersects[0].distance  
                 }
             } else{
-                for(let i=0; i < highlights.length; i++)
+                for(let i=0; i < this.highlights.length; i++)
                 {
-                    highlights[i].visible = false
+                    this.highlights[i].visible = false
                 }
             }
         }
