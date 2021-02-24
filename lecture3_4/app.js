@@ -161,13 +161,15 @@ class App{
             {
                 for(let i=0; i < intersects.length; i++)
                 {
-                    var hLight = this.highlight
-                    intersects[i].object.add( this.highlight )
-                    this.highlight.visible = true
+                    intersects[i].object.add( highlights[i] )
+                    highlights[i].visible = true
                     //controller.children[0].scale.z = intersects[0].distance  
                 }
             } else{
-                this.highlight.visible = false
+                for(let i=0; i < highlights.length; i++)
+                {
+                    this.highlight.visible = false
+                }
             }
         }
     }
