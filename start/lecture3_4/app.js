@@ -155,7 +155,8 @@ class App{
             {
                 for(let i=0; i < intersects.length; i++)
                 {
-                    intersects[i].object.add( this.highlight )
+                    var hLight = this.highlight
+                    intersects[i].object.add( hLight )
                     this.highlight.visible = true
                     //controller.children[0].scale.z = intersects[0].distance  
                 }
