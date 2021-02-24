@@ -155,7 +155,10 @@ class App{
             {
                 for(let i=0; i < intersects.length; i++)
                 {
-                    var hLight = this.highlight
+                    var hLight = new THREE.Mesh( geometry, new THREE.MeshBasicMaterial({
+                    color: 0xFFFFFF, side: THREE.BackSide }))
+                    this.highlight.scale.set( 1.2, 1.2, 1.2 )
+                    this.scene.add( this.highlight )
                     intersects[i].object.add( hLight )
                     this.highlight.visible = true
                     //controller.children[0].scale.z = intersects[0].distance  
